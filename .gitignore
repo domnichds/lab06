@@ -1,0 +1,31 @@
+# CMake
+_build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.o
+*.obj
+*.so
+*.a
+*.dll
+*.exe
+*.out
+*.app
+*.dSYM/
+
+# Артефакты пакетов
+artifacts/
+*.tar.gz
+*.zip
+*.deb
+*.rpm
+*.msi
+*.dmg
+
+# Логи
+*.log
+
+# IDE
+.idea/
+.vscode/ 
