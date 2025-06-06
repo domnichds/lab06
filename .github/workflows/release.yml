@@ -32,6 +32,8 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           cmake --build _build --target package
+          # Сборка исходных архивов через CPack
+          cmake --build _build --target package_source
           ls -lh _build
 
       - name: Package (macOS)
@@ -78,4 +80,4 @@ jobs:
             artifacts/**/*.msi
             artifacts/**/*.dmg
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
