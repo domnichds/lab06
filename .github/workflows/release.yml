@@ -32,7 +32,6 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           cmake --build _build --target package
-          # Сборка исходных архивов через CPack
           cmake --build _build --target package_source
           ls -lh _build
 
@@ -44,9 +43,10 @@ jobs:
 
       - name: Package (Windows)
         if: runner.os == 'Windows'
+        shell: pwsh
         run: |
           cmake --build _build --target package
-          ls -lh _build
+          Get-ChildItem _build
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
