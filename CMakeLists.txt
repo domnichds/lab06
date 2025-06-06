@@ -78,13 +78,8 @@ if(WIN32)
 elseif(APPLE)
   set(CPACK_GENERATOR "DragNDrop")
 elseif(UNIX)
-  if(EXISTS "/etc/debian_version")
-    set(CPACK_GENERATOR "DEB")
-  elseif(EXISTS "/etc/redhat-release")
-    set(CPACK_GENERATOR "RPM")
-  else()
-    set(CPACK_GENERATOR "TGZ")
-  endif()
+  # Force both DEB and RPM on Linux
+  set(CPACK_GENERATOR "DEB;RPM;TGZ")
 endif()
 
 # Set the package file name
